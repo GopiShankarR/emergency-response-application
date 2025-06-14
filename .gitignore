@@ -1,0 +1,35 @@
+# === Python Virtual Environment ===
+backend/env/
+backend/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# === Model Files and Large Data ===
+backend/*.h5
+backend/*.pkl
+backend/*.csv
+
+# === Dotenv Files ===
+backend/.env
+
+# React Native & Node
+frontend/node_modules/
+frontend/.expo/
+frontend/.expo-shared/
+
+# VS Code settings (optional)
+frontend/.vscode/
+
+# OS / Editor junk
+frontend/.DS_Store
+frontend/Thumbs.db
+
+# Metro & cache
+frontend/.cache/
+frontend/tmp/
+frontend/coverage/
+
+# Android/iOS build outputs (if added later)
+frontend/android/
+frontend/ios/

@@ -34,6 +34,16 @@ else:
 
 classifier = EmergencyClassifier()
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "message": "Emergency Response API is live.",
+        "available_endpoints": [
+            "/api/emergency-response (POST)",
+            "/api/nearby-hospitals (GET)"
+        ]
+    })
+
 @app.route("/api/emergency-response", methods=["POST"])
 def classify_emergency():
     data = request.json

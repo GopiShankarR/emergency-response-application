@@ -5,7 +5,7 @@ import pickle
 
 class EmergencyClassifier:
     def __init__(self):
-        self.max_len = 50  # Must match training script
+        self.max_len = 50
         self.model = tf.keras.models.load_model("model.h5")
         with open("tokenizer.pkl", "rb") as f:
             self.tokenizer = pickle.load(f)

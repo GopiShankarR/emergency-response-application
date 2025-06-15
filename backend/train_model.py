@@ -17,7 +17,6 @@ df = pd.read_csv("emergency_dataset.csv")
 texts = df["text"].astype(str).tolist()
 labels = df["label"].astype(str).tolist()
 
-# === Tokenize text ===
 tokenizer = Tokenizer(num_words=VOCAB_SIZE, oov_token="<OOV>")
 tokenizer.fit_on_texts(texts)
 X = pad_sequences(tokenizer.texts_to_sequences(texts), maxlen=MAX_LEN)
@@ -44,4 +43,4 @@ with open("tokenizer.pkl", "wb") as f:
 with open("label_encoder.pkl", "wb") as f:
     pickle.dump(label_encoder, f)
 
-print("✅ Model, tokenizer, and label encoder saved.")
+print("Model, tokenizer, and label encoder saved.")

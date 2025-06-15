@@ -27,6 +27,19 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "API_URL": "https://emergency-response-application.onrender.com",
+      "eas": {
+        "projectId": "2704c395-70c4-4f83-998b-1ecc5339f194"
+      }
+    },
+    "owner": "gopi_2605",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2704c395-70c4-4f83-998b-1ecc5339f194"
+    }
   }
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 export const getNearbyHospitals = async (latitude, longitude) => {
   try {
     console.log("Calling backend with:", latitude, longitude);
-    const response = await axios.get("http://192.168.0.182:5000/api/nearby-hospitals", {
+    const response = await axios.get("https://emergency-response-application.onrender.com/api/nearby-hospitals", {
       params: { lat: latitude, long: longitude },
     });
 

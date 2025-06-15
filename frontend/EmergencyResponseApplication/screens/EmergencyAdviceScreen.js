@@ -23,7 +23,7 @@ export default function EmergencyAdviceScreen() {
     setResponse('');
 
     try {
-      const res = await axios.post('http://192.168.0.182:5000/api/emergency-response', {
+      const res = await axios.post('https://emergency-response-application.onrender.com/api/emergency-response', {
         message: input,
       });
 

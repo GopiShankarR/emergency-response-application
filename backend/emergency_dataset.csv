@@ -1,0 +1,1001 @@
+text,label
+person says rash after bee sting,allergic_reaction
+person says sudden numbness in arm and face,stroke
+chest pain spreading to arm,chest_pain
+person says not moving or reacting,unconscious
+someone mentioned fire injury on arm,burns
+someone mentioned trouble seeing in one or both eyes,stroke
+someone mentioned possible food poisoning symptoms,poisoning
+patient reports sleeping and not waking up,unconscious
+chest pain spreading to arm,chest_pain
+patient reports sudden sharp chest pain,chest_pain
+burning sensation in chest,chest_pain
+head is hurting a lot suddenly,headache
+person says hives all over body,allergic_reaction
+reported chest pain spreading to arm,chest_pain
+someone mentioned chemical burn from cleaner,burns
+hives all over body,allergic_reaction
+reported hot water spilled on leg,burns
+reported wheezing and short of breath,breathing_difficulty
+ingested cleaning fluid,poisoning
+patient reports hot water spilled on leg,burns
+someone mentioned trouble seeing in one or both eyes,stroke
+someone mentioned gasping for air,breathing_difficulty
+reported muscle spasms and convulsions,seizure
+person says individual fainted and is not responding,unconscious
+patient reports cut on hand is not stopping bleeding,bleeding
+someone mentioned cut on hand is not stopping bleeding,bleeding
+someone mentioned gasping for air,breathing_difficulty
+reported individual fainted and is not responding,unconscious
+reported jerking movements noticed,seizure
+reported not breathing properly,breathing_difficulty
+sleeping and not waking up,unconscious
+reported cut on hand is not stopping bleeding,bleeding
+patient reports severe allergic reaction,allergic_reaction
+reported hot water spilled on leg,burns
+patient reports gasping for air,breathing_difficulty
+slurred speech and drooping face,stroke
+patient reports possible food poisoning symptoms,poisoning
+reported jerking movements noticed,seizure
+reported chemical burn from cleaner,burns
+patient reports chemical burn from cleaner,burns
+person says body shaking uncontrollably,seizure
+patient reports sudden sharp chest pain,chest_pain
+possible food poisoning symptoms,poisoning
+patient reports struggling to inhale,breathing_difficulty
+someone mentioned individual fainted and is not responding,unconscious
+vomiting after chemical exposure,poisoning
+patient reports severe blood loss from wound,bleeding
+reported hives all over body,allergic_reaction
+struggling to inhale,breathing_difficulty
+reported severe headache not going away,headache
+someone mentioned hives all over body,allergic_reaction
+someone mentioned sudden sharp chest pain,chest_pain
+reported person suddenly collapsed with twitching,seizure
+someone mentioned chemical burn from cleaner,burns
+person says bleeding heavily from leg,bleeding
+burnt hand while cooking,burns
+someone mentioned severe allergic reaction,allergic_reaction
+person says possible food poisoning symptoms,poisoning
+reported person collapsed suddenly,unconscious
+severe allergic reaction,allergic_reaction
+person says migraine symptoms with nausea,headache
+patient reports blood pouring out after accident,bleeding
+reported muscle spasms and convulsions,seizure
+patient reports severe allergic reaction,allergic_reaction
+person says hives all over body,allergic_reaction
+person says burning throat and nausea,poisoning
+reported severe headache not going away,headache
+person says ingested cleaning fluid,poisoning
+sleeping and not waking up,unconscious
+person says head is hurting a lot suddenly,headache
+sharp pain in forehead,headache
+patient reports person collapsed suddenly,unconscious
+someone mentioned rash after bee sting,allergic_reaction
+reported severe headache not going away,headache
+person says muscle spasms and convulsions,seizure
+someone mentioned rash after bee sting,allergic_reaction
+patient reports bleeding heavily from leg,bleeding
+body shaking uncontrollably,seizure
+reported not breathing properly,breathing_difficulty
+severe blood loss from wound,bleeding
+someone mentioned migraine symptoms with nausea,headache
+patient reports chest pain spreading to arm,chest_pain
+reported severe allergic reaction,allergic_reaction
+someone mentioned fire injury on arm,burns
+person says chest pain spreading to arm,chest_pain
+reported sleeping and not waking up,unconscious
+patient reports swollen lips and itching,allergic_reaction
+patient reports lost consciousness after falling,unconscious
+person says body shaking uncontrollably,seizure
+someone mentioned can't catch breath after running,breathing_difficulty
+jerking movements noticed,seizure
+reported painful pressure in chest,chest_pain
+person says burning sensation in chest,chest_pain
+someone mentioned swollen lips and itching,allergic_reaction
+patient reports child swallowed unknown pills,poisoning
+patient reports person is having a seizure,seizure
+someone mentioned not breathing properly,breathing_difficulty
+someone mentioned child swallowed unknown pills,poisoning
+patient reports sleeping and not waking up,unconscious
+reported sharp pain in forehead,headache
+reported sharp pain in forehead,headache
+someone mentioned burnt hand while cooking,burns
+muscle spasms and convulsions,seizure
+someone mentioned fire injury on arm,burns
+patient reports muscle spasms and convulsions,seizure
+person says sleeping and not waking up,unconscious
+sudden numbness in arm and face,stroke
+patient reports swollen lips and itching,allergic_reaction
+ingested cleaning fluid,poisoning
+someone mentioned burning throat and nausea,poisoning
+someone mentioned muscle spasms and convulsions,seizure
+person says severe allergic reaction,allergic_reaction
+reported feeling tightness in chest,chest_pain
+patient reports person suddenly collapsed with twitching,seizure
+reported person collapsed suddenly,unconscious
+possible food poisoning symptoms,poisoning
+patient reports possible food poisoning symptoms,poisoning
+reported person suddenly collapsed with twitching,seizure
+reported sharp pain in forehead,headache
+someone mentioned sudden numbness in arm and face,stroke
+migraine symptoms with nausea,headache
+person says head is hurting a lot suddenly,headache
+patient reports swollen lips and itching,allergic_reaction
+person says feeling tightness in chest,chest_pain
+reported feeling tightness in chest,chest_pain
+reported person suddenly collapsed with twitching,seizure
+someone mentioned sudden numbness in arm and face,stroke
+someone mentioned bleeding heavily from leg,bleeding
+someone mentioned muscle spasms and convulsions,seizure
+reported person is having a seizure,seizure
+reported blood pouring out after accident,bleeding
+person says painful pressure in chest,chest_pain
+reported head is hurting a lot suddenly,headache
+patient reports bleeding heavily from leg,bleeding
+reported blood pouring out after accident,bleeding
+person says can't catch breath after running,breathing_difficulty
+patient reports sleeping and not waking up,unconscious
+reported wheezing and short of breath,breathing_difficulty
+someone mentioned muscle spasms and convulsions,seizure
+reported nose won't stop bleeding,bleeding
+person says rash after bee sting,allergic_reaction
+reported difficulty breathing after eating peanuts,allergic_reaction
+reported sharp pain in forehead,headache
+patient reports not moving or reacting,unconscious
+reported difficulty breathing after eating peanuts,allergic_reaction
+reported wheezing and short of breath,breathing_difficulty
+patient reports ingested cleaning fluid,poisoning
+patient reports burnt hand while cooking,burns
+person says lost consciousness after falling,unconscious
+patient reports possible food poisoning symptoms,poisoning
+patient reports throbbing pain in the head,headache
+person says swollen lips and itching,allergic_reaction
+chemical burn from cleaner,burns
+person says gasping for air,breathing_difficulty
+person says trouble seeing in one or both eyes,stroke
+patient reports ingested cleaning fluid,poisoning
+someone mentioned hot water spilled on leg,burns
+person says migraine symptoms with nausea,headache
+person says nose won't stop bleeding,bleeding
+person says chemical burn from cleaner,burns
+reported cut on hand is not stopping bleeding,bleeding
+bleeding heavily from leg,bleeding
+burnt hand while cooking,burns
+reported sudden numbness in arm and face,stroke
+someone mentioned slurred speech and drooping face,stroke
+patient reports painful pressure in chest,chest_pain
+reported severe allergic reaction,allergic_reaction
+wheezing and short of breath,breathing_difficulty
+patient reports person is having a seizure,seizure
+person says child swallowed unknown pills,poisoning
+person says migraine symptoms with nausea,headache
+reported body shaking uncontrollably,seizure
+individual fainted and is not responding,unconscious
+reported migraine symptoms with nausea,headache
+someone mentioned lost consciousness after falling,unconscious
+person says lost consciousness after falling,unconscious
+severe headache not going away,headache
+person says blood pouring out after accident,bleeding
+someone mentioned chemical burn from cleaner,burns
+reported sleeping and not waking up,unconscious
+reported rash after bee sting,allergic_reaction
+someone mentioned vomiting after chemical exposure,poisoning
+ingested cleaning fluid,poisoning
+person says difficulty breathing after eating peanuts,allergic_reaction
+patient reports severe blood loss from wound,bleeding
+patient reports trouble seeing in one or both eyes,stroke
+patient reports slurred speech and drooping face,stroke
+reported trouble seeing in one or both eyes,stroke
+patient reports person collapsed suddenly,unconscious
+person says struggling to inhale,breathing_difficulty
+not moving or reacting,unconscious
+someone mentioned hives all over body,allergic_reaction
+patient reports unable to move one side of body,stroke
+reported throbbing pain in the head,headache
+fire injury on arm,burns
+person says sharp pain in forehead,headache
+patient reports hot water spilled on leg,burns
+person says sudden numbness in arm and face,stroke
+someone mentioned lost consciousness after falling,unconscious
+person says can't catch breath after running,breathing_difficulty
+can't catch breath after running,breathing_difficulty
+someone mentioned gasping for air,breathing_difficulty
+person says body shaking uncontrollably,seizure
+someone mentioned rash after bee sting,allergic_reaction
+patient reports burning sensation in chest,chest_pain
+jerking movements noticed,seizure
+body shaking uncontrollably,seizure
+someone mentioned sudden confusion and loss of balance,stroke
+person says sudden numbness in arm and face,stroke
+burnt hand while cooking,burns
+slurred speech and drooping face,stroke
+difficulty breathing after eating peanuts,allergic_reaction
+person says not breathing properly,breathing_difficulty
+reported fire injury on arm,burns
+someone mentioned head is hurting a lot suddenly,headache
+blood pouring out after accident,bleeding
+sudden numbness in arm and face,stroke
+person says gasping for air,breathing_difficulty
+person collapsed suddenly,unconscious
+painful pressure in chest,chest_pain
+cut on hand is not stopping bleeding,bleeding
+person says ingested cleaning fluid,poisoning
+patient reports can't catch breath after running,breathing_difficulty
+person says can't catch breath after running,breathing_difficulty
+someone mentioned vomiting after chemical exposure,poisoning
+burnt hand while cooking,burns
+patient reports wheezing and short of breath,breathing_difficulty
+skin is blistered and red,burns
+reported sudden confusion and loss of balance,stroke
+someone mentioned fire injury on arm,burns
+patient reports person suddenly collapsed with twitching,seizure
+person says sudden numbness in arm and face,stroke
+reported not moving or reacting,unconscious
+patient reports sudden numbness in arm and face,stroke
+person says cut on hand is not stopping bleeding,bleeding
+someone mentioned painful pressure in chest,chest_pain
+reported trouble seeing in one or both eyes,stroke
+patient reports burning sensation in chest,chest_pain
+not moving or reacting,unconscious
+person says individual fainted and is not responding,unconscious
+reported skin is blistered and red,burns
+person says slurred speech and drooping face,stroke
+patient reports bleeding heavily from leg,bleeding
+reported fire injury on arm,burns
+person says feeling tightness in chest,chest_pain
+reported not breathing properly,breathing_difficulty
+patient reports difficulty breathing after eating peanuts,allergic_reaction
+someone mentioned swollen lips and itching,allergic_reaction
+reported severe headache not going away,headache
+patient reports person is having a seizure,seizure
+reported burning sensation in chest,chest_pain
+person says sudden confusion and loss of balance,stroke
+nose won't stop bleeding,bleeding
+reported muscle spasms and convulsions,seizure
+someone mentioned child swallowed unknown pills,poisoning
+reported burning sensation in chest,chest_pain
+person says feeling tightness in chest,chest_pain
+reported struggling to inhale,breathing_difficulty
+person says migraine symptoms with nausea,headache
+person says severe blood loss from wound,bleeding
+someone mentioned difficulty breathing after eating peanuts,allergic_reaction
+trouble seeing in one or both eyes,stroke
+skin is blistered and red,burns
+trouble seeing in one or both eyes,stroke
+person says nose won't stop bleeding,bleeding
+someone mentioned ingested cleaning fluid,poisoning
+someone mentioned not breathing properly,breathing_difficulty
+someone mentioned not moving or reacting,unconscious
+person says sleeping and not waking up,unconscious
+reported head is hurting a lot suddenly,headache
+patient reports gasping for air,breathing_difficulty
+someone mentioned struggling to inhale,breathing_difficulty
+patient reports rash after bee sting,allergic_reaction
+patient reports sleeping and not waking up,unconscious
+person says severe blood loss from wound,bleeding
+reported hives all over body,allergic_reaction
+burning sensation in chest,chest_pain
+person says child swallowed unknown pills,poisoning
+someone mentioned sudden confusion and loss of balance,stroke
+burning sensation in chest,chest_pain
+person says lost consciousness after falling,unconscious
+difficulty breathing after eating peanuts,allergic_reaction
+patient reports severe allergic reaction,allergic_reaction
+person says slurred speech and drooping face,stroke
+person says nose won't stop bleeding,bleeding
+child swallowed unknown pills,poisoning
+reported blood pouring out after accident,bleeding
+someone mentioned hot water spilled on leg,burns
+patient reports cut on hand is not stopping bleeding,bleeding
+someone mentioned gasping for air,breathing_difficulty
+reported painful pressure in chest,chest_pain
+someone mentioned chemical burn from cleaner,burns
+reported struggling to inhale,breathing_difficulty
+patient reports jerking movements noticed,seizure
+chemical burn from cleaner,burns
+slurred speech and drooping face,stroke
+someone mentioned individual fainted and is not responding,unconscious
+reported hot water spilled on leg,burns
+someone mentioned blood pouring out after accident,bleeding
+sudden sharp chest pain,chest_pain
+person says unable to move one side of body,stroke
+patient reports feeling tightness in chest,chest_pain
+migraine symptoms with nausea,headache
+someone mentioned jerking movements noticed,seizure
+patient reports ingested cleaning fluid,poisoning
+patient reports head is hurting a lot suddenly,headache
+reported trouble seeing in one or both eyes,stroke
+person says cut on hand is not stopping bleeding,bleeding
+patient reports wheezing and short of breath,breathing_difficulty
+someone mentioned child swallowed unknown pills,poisoning
+patient reports person suddenly collapsed with twitching,seizure
+person says possible food poisoning symptoms,poisoning
+reported sharp pain in forehead,headache
+person says severe headache not going away,headache
+reported person is having a seizure,seizure
+reported wheezing and short of breath,breathing_difficulty
+reported sudden sharp chest pain,chest_pain
+patient reports can't catch breath after running,breathing_difficulty
+reported sudden numbness in arm and face,stroke
+reported burning sensation in chest,chest_pain
+reported jerking movements noticed,seizure
+painful pressure in chest,chest_pain
+reported skin is blistered and red,burns
+reported person collapsed suddenly,unconscious
+someone mentioned child swallowed unknown pills,poisoning
+reported hot water spilled on leg,burns
+burning sensation in chest,chest_pain
+someone mentioned burning sensation in chest,chest_pain
+reported severe blood loss from wound,bleeding
+patient reports sudden confusion and loss of balance,stroke
+someone mentioned chemical burn from cleaner,burns
+person says individual fainted and is not responding,unconscious
+reported throbbing pain in the head,headache
+reported blood pouring out after accident,bleeding
+person says chest pain spreading to arm,chest_pain
+patient reports person suddenly collapsed with twitching,seizure
+someone mentioned severe headache not going away,headache
+patient reports skin is blistered and red,burns
+someone mentioned vomiting after chemical exposure,poisoning
+chemical burn from cleaner,burns
+someone mentioned rash after bee sting,allergic_reaction
+person says hot water spilled on leg,burns
+someone mentioned blood pouring out after accident,bleeding
+patient reports painful pressure in chest,chest_pain
+reported jerking movements noticed,seizure
+patient reports gasping for air,breathing_difficulty
+can't catch breath after running,breathing_difficulty
+patient reports burnt hand while cooking,burns
+person says sharp pain in forehead,headache
+patient reports person suddenly collapsed with twitching,seizure
+patient reports child swallowed unknown pills,poisoning
+individual fainted and is not responding,unconscious
+person says migraine symptoms with nausea,headache
+person says gasping for air,breathing_difficulty
+patient reports ingested cleaning fluid,poisoning
+sudden confusion and loss of balance,stroke
+someone mentioned person is having a seizure,seizure
+person says individual fainted and is not responding,unconscious
+patient reports not moving or reacting,unconscious
+body shaking uncontrollably,seizure
+reported head is hurting a lot suddenly,headache
+someone mentioned sudden numbness in arm and face,stroke
+someone mentioned burning throat and nausea,poisoning
+rash after bee sting,allergic_reaction
+reported sleeping and not waking up,unconscious
+person says chest pain spreading to arm,chest_pain
+someone mentioned bleeding heavily from leg,bleeding
+chemical burn from cleaner,burns
+person says sudden sharp chest pain,chest_pain
+someone mentioned wheezing and short of breath,breathing_difficulty
+person says muscle spasms and convulsions,seizure
+patient reports trouble seeing in one or both eyes,stroke
+person says can't catch breath after running,breathing_difficulty
+person says burning sensation in chest,chest_pain
+patient reports body shaking uncontrollably,seizure
+someone mentioned skin is blistered and red,burns
+rash after bee sting,allergic_reaction
+difficulty breathing after eating peanuts,allergic_reaction
+patient reports struggling to inhale,breathing_difficulty
+person says can't catch breath after running,breathing_difficulty
+person says individual fainted and is not responding,unconscious
+reported chest pain spreading to arm,chest_pain
+reported not breathing properly,breathing_difficulty
+reported hot water spilled on leg,burns
+sudden numbness in arm and face,stroke
+lost consciousness after falling,unconscious
+someone mentioned sudden confusion and loss of balance,stroke
+trouble seeing in one or both eyes,stroke
+sleeping and not waking up,unconscious
+person says nose won't stop bleeding,bleeding
+someone mentioned unable to move one side of body,stroke
+person says not breathing properly,breathing_difficulty
+patient reports child swallowed unknown pills,poisoning
+person says fire injury on arm,burns
+person says not breathing properly,breathing_difficulty
+patient reports migraine symptoms with nausea,headache
+patient reports slurred speech and drooping face,stroke
+patient reports painful pressure in chest,chest_pain
+patient reports person suddenly collapsed with twitching,seizure
+reported sharp pain in forehead,headache
+reported bleeding heavily from leg,bleeding
+someone mentioned body shaking uncontrollably,seizure
+someone mentioned throbbing pain in the head,headache
+reported burnt hand while cooking,burns
+hives all over body,allergic_reaction
+someone mentioned head is hurting a lot suddenly,headache
+reported sharp pain in forehead,headache
+migraine symptoms with nausea,headache
+patient reports muscle spasms and convulsions,seizure
+swollen lips and itching,allergic_reaction
+patient reports body shaking uncontrollably,seizure
+person says hot water spilled on leg,burns
+someone mentioned burning throat and nausea,poisoning
+patient reports jerking movements noticed,seizure
+reported painful pressure in chest,chest_pain
+someone mentioned hives all over body,allergic_reaction
+person says individual fainted and is not responding,unconscious
+someone mentioned chest pain spreading to arm,chest_pain
+reported sharp pain in forehead,headache
+burning sensation in chest,chest_pain
+person says not breathing properly,breathing_difficulty
+reported not moving or reacting,unconscious
+patient reports individual fainted and is not responding,unconscious
+someone mentioned severe allergic reaction,allergic_reaction
+throbbing pain in the head,headache
+patient reports ingested cleaning fluid,poisoning
+bleeding heavily from leg,bleeding
+someone mentioned severe blood loss from wound,bleeding
+person says severe allergic reaction,allergic_reaction
+person says unable to move one side of body,stroke
+person says throbbing pain in the head,headache
+someone mentioned can't catch breath after running,breathing_difficulty
+person says person is having a seizure,seizure
+patient reports head is hurting a lot suddenly,headache
+reported head is hurting a lot suddenly,headache
+patient reports individual fainted and is not responding,unconscious
+sudden confusion and loss of balance,stroke
+body shaking uncontrollably,seizure
+reported burning sensation in chest,chest_pain
+patient reports sleeping and not waking up,unconscious
+person is having a seizure,seizure
+person says severe allergic reaction,allergic_reaction
+trouble seeing in one or both eyes,stroke
+trouble seeing in one or both eyes,stroke
+reported rash after bee sting,allergic_reaction
+patient reports person collapsed suddenly,unconscious
+person says person is having a seizure,seizure
+not breathing properly,breathing_difficulty
+child swallowed unknown pills,poisoning
+person says severe allergic reaction,allergic_reaction
+person says possible food poisoning symptoms,poisoning
+reported not breathing properly,breathing_difficulty
+person says sudden sharp chest pain,chest_pain
+patient reports nose won't stop bleeding,bleeding
+patient reports slurred speech and drooping face,stroke
+trouble seeing in one or both eyes,stroke
+reported body shaking uncontrollably,seizure
+person says person collapsed suddenly,unconscious
+reported jerking movements noticed,seizure
+someone mentioned muscle spasms and convulsions,seizure
+gasping for air,breathing_difficulty
+someone mentioned skin is blistered and red,burns
+someone mentioned slurred speech and drooping face,stroke
+patient reports slurred speech and drooping face,stroke
+reported body shaking uncontrollably,seizure
+hives all over body,allergic_reaction
+someone mentioned hives all over body,allergic_reaction
+reported wheezing and short of breath,breathing_difficulty
+reported possible food poisoning symptoms,poisoning
+person says burning throat and nausea,poisoning
+person says sudden numbness in arm and face,stroke
+burning throat and nausea,poisoning
+person collapsed suddenly,unconscious
+reported can't catch breath after running,breathing_difficulty
+bleeding heavily from leg,bleeding
+reported cut on hand is not stopping bleeding,bleeding
+sudden numbness in arm and face,stroke
+patient reports hot water spilled on leg,burns
+someone mentioned chemical burn from cleaner,burns
+patient reports slurred speech and drooping face,stroke
+patient reports difficulty breathing after eating peanuts,allergic_reaction
+person says severe blood loss from wound,bleeding
+reported bleeding heavily from leg,bleeding
+person says not moving or reacting,unconscious
+person says lost consciousness after falling,unconscious
+someone mentioned cut on hand is not stopping bleeding,bleeding
+someone mentioned not moving or reacting,unconscious
+patient reports burning throat and nausea,poisoning
+someone mentioned head is hurting a lot suddenly,headache
+patient reports swollen lips and itching,allergic_reaction
+patient reports sleeping and not waking up,unconscious
+someone mentioned severe allergic reaction,allergic_reaction
+person says hot water spilled on leg,burns
+fire injury on arm,burns
+patient reports chest pain spreading to arm,chest_pain
+gasping for air,breathing_difficulty
+sharp pain in forehead,headache
+someone mentioned head is hurting a lot suddenly,headache
+person suddenly collapsed with twitching,seizure
+person says trouble seeing in one or both eyes,stroke
+possible food poisoning symptoms,poisoning
+sudden numbness in arm and face,stroke
+reported sleeping and not waking up,unconscious
+someone mentioned wheezing and short of breath,breathing_difficulty
+reported person is having a seizure,seizure
+reported sleeping and not waking up,unconscious
+reported migraine symptoms with nausea,headache
+patient reports severe blood loss from wound,bleeding
+person says muscle spasms and convulsions,seizure
+someone mentioned sudden confusion and loss of balance,stroke
+patient reports head is hurting a lot suddenly,headache
+patient reports sleeping and not waking up,unconscious
+person says burnt hand while cooking,burns
+patient reports ingested cleaning fluid,poisoning
+reported severe blood loss from wound,bleeding
+someone mentioned not breathing properly,breathing_difficulty
+person says burning sensation in chest,chest_pain
+reported wheezing and short of breath,breathing_difficulty
+patient reports ingested cleaning fluid,poisoning
+patient reports lost consciousness after falling,unconscious
+reported severe blood loss from wound,bleeding
+patient reports severe blood loss from wound,bleeding
+person says burning throat and nausea,poisoning
+person says individual fainted and is not responding,unconscious
+can't catch breath after running,breathing_difficulty
+someone mentioned painful pressure in chest,chest_pain
+person says sudden confusion and loss of balance,stroke
+difficulty breathing after eating peanuts,allergic_reaction
+patient reports burnt hand while cooking,burns
+someone mentioned feeling tightness in chest,chest_pain
+feeling tightness in chest,chest_pain
+reported slurred speech and drooping face,stroke
+patient reports head is hurting a lot suddenly,headache
+gasping for air,breathing_difficulty
+someone mentioned burning sensation in chest,chest_pain
+patient reports nose won't stop bleeding,bleeding
+patient reports sudden sharp chest pain,chest_pain
+reported jerking movements noticed,seizure
+reported individual fainted and is not responding,unconscious
+patient reports nose won't stop bleeding,bleeding
+patient reports burnt hand while cooking,burns
+someone mentioned struggling to inhale,breathing_difficulty
+hives all over body,allergic_reaction
+person says ingested cleaning fluid,poisoning
+person says chemical burn from cleaner,burns
+someone mentioned burning throat and nausea,poisoning
+patient reports skin is blistered and red,burns
+reported swollen lips and itching,allergic_reaction
+person says chemical burn from cleaner,burns
+throbbing pain in the head,headache
+person says rash after bee sting,allergic_reaction
+someone mentioned hives all over body,allergic_reaction
+reported fire injury on arm,burns
+patient reports feeling tightness in chest,chest_pain
+reported person suddenly collapsed with twitching,seizure
+rash after bee sting,allergic_reaction
+reported wheezing and short of breath,breathing_difficulty
+reported burning throat and nausea,poisoning
+reported individual fainted and is not responding,unconscious
+person says not moving or reacting,unconscious
+reported sharp pain in forehead,headache
+person says muscle spasms and convulsions,seizure
+person says gasping for air,breathing_difficulty
+reported person is having a seizure,seizure
+reported child swallowed unknown pills,poisoning
+reported wheezing and short of breath,breathing_difficulty
+head is hurting a lot suddenly,headache
+someone mentioned person collapsed suddenly,unconscious
+person says head is hurting a lot suddenly,headache
+reported vomiting after chemical exposure,poisoning
+patient reports feeling tightness in chest,chest_pain
+swollen lips and itching,allergic_reaction
+person says burning sensation in chest,chest_pain
+muscle spasms and convulsions,seizure
+person says hives all over body,allergic_reaction
+someone mentioned cut on hand is not stopping bleeding,bleeding
+person says severe headache not going away,headache
+patient reports person collapsed suddenly,unconscious
+patient reports slurred speech and drooping face,stroke
+patient reports chest pain spreading to arm,chest_pain
+patient reports struggling to inhale,breathing_difficulty
+reported burning sensation in chest,chest_pain
+person says muscle spasms and convulsions,seizure
+hot water spilled on leg,burns
+patient reports jerking movements noticed,seizure
+reported chest pain spreading to arm,chest_pain
+slurred speech and drooping face,stroke
+patient reports severe allergic reaction,allergic_reaction
+person says possible food poisoning symptoms,poisoning
+patient reports body shaking uncontrollably,seizure
+child swallowed unknown pills,poisoning
+reported nose won't stop bleeding,bleeding
+reported struggling to inhale,breathing_difficulty
+someone mentioned hives all over body,allergic_reaction
+reported person is having a seizure,seizure
+reported rash after bee sting,allergic_reaction
+patient reports severe blood loss from wound,bleeding
+patient reports person collapsed suddenly,unconscious
+person says chemical burn from cleaner,burns
+person says person suddenly collapsed with twitching,seizure
+someone mentioned nose won't stop bleeding,bleeding
+person says hot water spilled on leg,burns
+person says difficulty breathing after eating peanuts,allergic_reaction
+reported sleeping and not waking up,unconscious
+reported sharp pain in forehead,headache
+reported blood pouring out after accident,bleeding
+patient reports fire injury on arm,burns
+patient reports can't catch breath after running,breathing_difficulty
+person says not moving or reacting,unconscious
+child swallowed unknown pills,poisoning
+someone mentioned chest pain spreading to arm,chest_pain
+patient reports rash after bee sting,allergic_reaction
+sudden numbness in arm and face,stroke
+someone mentioned bleeding heavily from leg,bleeding
+someone mentioned head is hurting a lot suddenly,headache
+someone mentioned severe allergic reaction,allergic_reaction
+person says bleeding heavily from leg,bleeding
+patient reports unable to move one side of body,stroke
+not breathing properly,breathing_difficulty
+reported wheezing and short of breath,breathing_difficulty
+person says struggling to inhale,breathing_difficulty
+person says head is hurting a lot suddenly,headache
+patient reports swollen lips and itching,allergic_reaction
+skin is blistered and red,burns
+person says vomiting after chemical exposure,poisoning
+someone mentioned individual fainted and is not responding,unconscious
+someone mentioned head is hurting a lot suddenly,headache
+patient reports individual fainted and is not responding,unconscious
+patient reports feeling tightness in chest,chest_pain
+patient reports difficulty breathing after eating peanuts,allergic_reaction
+person says feeling tightness in chest,chest_pain
+patient reports hot water spilled on leg,burns
+patient reports feeling tightness in chest,chest_pain
+gasping for air,breathing_difficulty
+someone mentioned jerking movements noticed,seizure
+person says not breathing properly,breathing_difficulty
+patient reports unable to move one side of body,stroke
+person says painful pressure in chest,chest_pain
+patient reports severe headache not going away,headache
+severe allergic reaction,allergic_reaction
+reported vomiting after chemical exposure,poisoning
+person says nose won't stop bleeding,bleeding
+nose won't stop bleeding,bleeding
+someone mentioned lost consciousness after falling,unconscious
+person says gasping for air,breathing_difficulty
+someone mentioned severe allergic reaction,allergic_reaction
+someone mentioned wheezing and short of breath,breathing_difficulty
+reported burning throat and nausea,poisoning
+person says throbbing pain in the head,headache
+someone mentioned not moving or reacting,unconscious
+someone mentioned migraine symptoms with nausea,headache
+nose won't stop bleeding,bleeding
+patient reports chemical burn from cleaner,burns
+patient reports skin is blistered and red,burns
+person says severe headache not going away,headache
+patient reports bleeding heavily from leg,bleeding
+bleeding heavily from leg,bleeding
+someone mentioned gasping for air,breathing_difficulty
+someone mentioned hives all over body,allergic_reaction
+sudden confusion and loss of balance,stroke
+person says swollen lips and itching,allergic_reaction
+patient reports sudden numbness in arm and face,stroke
+someone mentioned burning sensation in chest,chest_pain
+reported sudden numbness in arm and face,stroke
+jerking movements noticed,seizure
+someone mentioned child swallowed unknown pills,poisoning
+someone mentioned muscle spasms and convulsions,seizure
+patient reports hives all over body,allergic_reaction
+someone mentioned gasping for air,breathing_difficulty
+patient reports throbbing pain in the head,headache
+reported jerking movements noticed,seizure
+patient reports vomiting after chemical exposure,poisoning
+person says possible food poisoning symptoms,poisoning
+reported cut on hand is not stopping bleeding,bleeding
+someone mentioned jerking movements noticed,seizure
+person says skin is blistered and red,burns
+person says ingested cleaning fluid,poisoning
+patient reports chest pain spreading to arm,chest_pain
+reported sudden sharp chest pain,chest_pain
+someone mentioned can't catch breath after running,breathing_difficulty
+patient reports sudden numbness in arm and face,stroke
+person says chemical burn from cleaner,burns
+reported head is hurting a lot suddenly,headache
+person says child swallowed unknown pills,poisoning
+someone mentioned sudden sharp chest pain,chest_pain
+reported swollen lips and itching,allergic_reaction
+someone mentioned child swallowed unknown pills,poisoning
+person says slurred speech and drooping face,stroke
+reported throbbing pain in the head,headache
+someone mentioned blood pouring out after accident,bleeding
+patient reports chemical burn from cleaner,burns
+patient reports bleeding heavily from leg,bleeding
+patient reports difficulty breathing after eating peanuts,allergic_reaction
+someone mentioned painful pressure in chest,chest_pain
+body shaking uncontrollably,seizure
+ingested cleaning fluid,poisoning
+someone mentioned migraine symptoms with nausea,headache
+lost consciousness after falling,unconscious
+reported wheezing and short of breath,breathing_difficulty
+person is having a seizure,seizure
+patient reports individual fainted and is not responding,unconscious
+someone mentioned unable to move one side of body,stroke
+patient reports severe allergic reaction,allergic_reaction
+reported burnt hand while cooking,burns
+patient reports slurred speech and drooping face,stroke
+lost consciousness after falling,unconscious
+person says cut on hand is not stopping bleeding,bleeding
+reported bleeding heavily from leg,bleeding
+someone mentioned ingested cleaning fluid,poisoning
+someone mentioned chest pain spreading to arm,chest_pain
+patient reports rash after bee sting,allergic_reaction
+person says slurred speech and drooping face,stroke
+reported not breathing properly,breathing_difficulty
+someone mentioned head is hurting a lot suddenly,headache
+sudden confusion and loss of balance,stroke
+someone mentioned severe headache not going away,headache
+person says migraine symptoms with nausea,headache
+patient reports chemical burn from cleaner,burns
+person says child swallowed unknown pills,poisoning
+someone mentioned wheezing and short of breath,breathing_difficulty
+person says burning sensation in chest,chest_pain
+person says bleeding heavily from leg,bleeding
+nose won't stop bleeding,bleeding
+reported body shaking uncontrollably,seizure
+muscle spasms and convulsions,seizure
+chemical burn from cleaner,burns
+reported ingested cleaning fluid,poisoning
+patient reports bleeding heavily from leg,bleeding
+patient reports blood pouring out after accident,bleeding
+reported person is having a seizure,seizure
+someone mentioned gasping for air,breathing_difficulty
+person says burnt hand while cooking,burns
+patient reports not moving or reacting,unconscious
+patient reports head is hurting a lot suddenly,headache
+someone mentioned jerking movements noticed,seizure
+someone mentioned feeling tightness in chest,chest_pain
+body shaking uncontrollably,seizure
+patient reports possible food poisoning symptoms,poisoning
+patient reports burning throat and nausea,poisoning
+patient reports head is hurting a lot suddenly,headache
+person says person collapsed suddenly,unconscious
+person says sudden sharp chest pain,chest_pain
+patient reports bleeding heavily from leg,bleeding
+person says jerking movements noticed,seizure
+patient reports severe blood loss from wound,bleeding
+sleeping and not waking up,unconscious
+person says severe allergic reaction,allergic_reaction
+patient reports trouble seeing in one or both eyes,stroke
+person says skin is blistered and red,burns
+reported bleeding heavily from leg,bleeding
+person says gasping for air,breathing_difficulty
+chemical burn from cleaner,burns
+person says jerking movements noticed,seizure
+patient reports sudden sharp chest pain,chest_pain
+reported severe blood loss from wound,bleeding
+reported severe blood loss from wound,bleeding
+reported burning sensation in chest,chest_pain
+reported slurred speech and drooping face,stroke
+person says person is having a seizure,seizure
+skin is blistered and red,burns
+severe blood loss from wound,bleeding
+reported not moving or reacting,unconscious
+severe allergic reaction,allergic_reaction
+someone mentioned muscle spasms and convulsions,seizure
+person says burning throat and nausea,poisoning
+reported fire injury on arm,burns
+burning sensation in chest,chest_pain
+patient reports migraine symptoms with nausea,headache
+person says painful pressure in chest,chest_pain
+struggling to inhale,breathing_difficulty
+trouble seeing in one or both eyes,stroke
+patient reports sudden numbness in arm and face,stroke
+someone mentioned head is hurting a lot suddenly,headache
+reported chest pain spreading to arm,chest_pain
+reported struggling to inhale,breathing_difficulty
+person says hives all over body,allergic_reaction
+reported wheezing and short of breath,breathing_difficulty
+reported fire injury on arm,burns
+reported ingested cleaning fluid,poisoning
+reported head is hurting a lot suddenly,headache
+someone mentioned burnt hand while cooking,burns
+person says sudden numbness in arm and face,stroke
+reported difficulty breathing after eating peanuts,allergic_reaction
+someone mentioned possible food poisoning symptoms,poisoning
+someone mentioned painful pressure in chest,chest_pain
+patient reports vomiting after chemical exposure,poisoning
+someone mentioned head is hurting a lot suddenly,headache
+patient reports lost consciousness after falling,unconscious
+patient reports vomiting after chemical exposure,poisoning
+someone mentioned chest pain spreading to arm,chest_pain
+gasping for air,breathing_difficulty
+reported hives all over body,allergic_reaction
+patient reports nose won't stop bleeding,bleeding
+patient reports chest pain spreading to arm,chest_pain
+not moving or reacting,unconscious
+patient reports migraine symptoms with nausea,headache
+patient reports skin is blistered and red,burns
+person says individual fainted and is not responding,unconscious
+patient reports painful pressure in chest,chest_pain
+someone mentioned child swallowed unknown pills,poisoning
+burning sensation in chest,chest_pain
+patient reports trouble seeing in one or both eyes,stroke
+patient reports burnt hand while cooking,burns
+patient reports severe allergic reaction,allergic_reaction
+reported blood pouring out after accident,bleeding
+head is hurting a lot suddenly,headache
+difficulty breathing after eating peanuts,allergic_reaction
+reported bleeding heavily from leg,bleeding
+someone mentioned bleeding heavily from leg,bleeding
+reported hot water spilled on leg,burns
+someone mentioned skin is blistered and red,burns
+rash after bee sting,allergic_reaction
+someone mentioned rash after bee sting,allergic_reaction
+person says ingested cleaning fluid,poisoning
+someone mentioned blood pouring out after accident,bleeding
+person says trouble seeing in one or both eyes,stroke
+patient reports swollen lips and itching,allergic_reaction
+throbbing pain in the head,headache
+someone mentioned burnt hand while cooking,burns
+patient reports struggling to inhale,breathing_difficulty
+reported burning sensation in chest,chest_pain
+reported nose won't stop bleeding,bleeding
+reported cut on hand is not stopping bleeding,bleeding
+someone mentioned blood pouring out after accident,bleeding
+person says gasping for air,breathing_difficulty
+reported person suddenly collapsed with twitching,seizure
+hot water spilled on leg,burns
+person says chemical burn from cleaner,burns
+reported vomiting after chemical exposure,poisoning
+person collapsed suddenly,unconscious
+vomiting after chemical exposure,poisoning
+gasping for air,breathing_difficulty
+person says chest pain spreading to arm,chest_pain
+reported severe headache not going away,headache
+person says throbbing pain in the head,headache
+someone mentioned chest pain spreading to arm,chest_pain
+someone mentioned severe allergic reaction,allergic_reaction
+person says gasping for air,breathing_difficulty
+person says severe headache not going away,headache
+reported trouble seeing in one or both eyes,stroke
+reported possible food poisoning symptoms,poisoning
+reported head is hurting a lot suddenly,headache
+patient reports sudden confusion and loss of balance,stroke
+patient reports struggling to inhale,breathing_difficulty
+person says severe blood loss from wound,bleeding
+reported person suddenly collapsed with twitching,seizure
+reported trouble seeing in one or both eyes,stroke
+trouble seeing in one or both eyes,stroke
+difficulty breathing after eating peanuts,allergic_reaction
+patient reports fire injury on arm,burns
+person says possible food poisoning symptoms,poisoning
+reported hives all over body,allergic_reaction
+patient reports muscle spasms and convulsions,seizure
+severe allergic reaction,allergic_reaction
+patient reports possible food poisoning symptoms,poisoning
+patient reports slurred speech and drooping face,stroke
+person says struggling to inhale,breathing_difficulty
+reported fire injury on arm,burns
+person says burning throat and nausea,poisoning
+reported sudden numbness in arm and face,stroke
+sudden sharp chest pain,chest_pain
+person says sudden confusion and loss of balance,stroke
+sudden numbness in arm and face,stroke
+jerking movements noticed,seizure
+burning sensation in chest,chest_pain
+person says trouble seeing in one or both eyes,stroke
+someone mentioned throbbing pain in the head,headache
+patient reports difficulty breathing after eating peanuts,allergic_reaction
+wheezing and short of breath,breathing_difficulty
+someone mentioned vomiting after chemical exposure,poisoning
+nose won't stop bleeding,bleeding
+patient reports person suddenly collapsed with twitching,seizure
+patient reports person collapsed suddenly,unconscious
+patient reports unable to move one side of body,stroke
+jerking movements noticed,seizure
+patient reports gasping for air,breathing_difficulty
+reported person is having a seizure,seizure
+reported sudden sharp chest pain,chest_pain
+someone mentioned hives all over body,allergic_reaction
+reported cut on hand is not stopping bleeding,bleeding
+reported person suddenly collapsed with twitching,seizure
+wheezing and short of breath,breathing_difficulty
+hives all over body,allergic_reaction
+someone mentioned person collapsed suddenly,unconscious
+reported person suddenly collapsed with twitching,seizure
+person says throbbing pain in the head,headache
+child swallowed unknown pills,poisoning
+person says severe headache not going away,headache
+someone mentioned possible food poisoning symptoms,poisoning
+someone mentioned sudden sharp chest pain,chest_pain
+sudden confusion and loss of balance,stroke
+patient reports not breathing properly,breathing_difficulty
+reported lost consciousness after falling,unconscious
+reported sharp pain in forehead,headache
+reported unable to move one side of body,stroke
+patient reports sudden sharp chest pain,chest_pain
+person says sudden numbness in arm and face,stroke
+someone mentioned severe headache not going away,headache
+someone mentioned wheezing and short of breath,breathing_difficulty
+patient reports person collapsed suddenly,unconscious
+someone mentioned muscle spasms and convulsions,seizure
+reported painful pressure in chest,chest_pain
+patient reports person collapsed suddenly,unconscious
+someone mentioned difficulty breathing after eating peanuts,allergic_reaction
+someone mentioned cut on hand is not stopping bleeding,bleeding
+reported sudden confusion and loss of balance,stroke
+patient reports migraine symptoms with nausea,headache
+person says cut on hand is not stopping bleeding,bleeding
+reported feeling tightness in chest,chest_pain
+patient reports rash after bee sting,allergic_reaction
+swollen lips and itching,allergic_reaction
+person says trouble seeing in one or both eyes,stroke
+person says hot water spilled on leg,burns
+reported ingested cleaning fluid,poisoning
+person says burning sensation in chest,chest_pain
+reported sudden confusion and loss of balance,stroke
+patient reports person is having a seizure,seizure
+person says not breathing properly,breathing_difficulty
+reported burning sensation in chest,chest_pain
+person says migraine symptoms with nausea,headache
+reported cut on hand is not stopping bleeding,bleeding
+someone mentioned sudden confusion and loss of balance,stroke
+patient reports burning sensation in chest,chest_pain
+patient reports sudden confusion and loss of balance,stroke
+patient reports burning throat and nausea,poisoning
+reported slurred speech and drooping face,stroke
+patient reports body shaking uncontrollably,seizure
+reported hot water spilled on leg,burns
+patient reports possible food poisoning symptoms,poisoning
+person says chest pain spreading to arm,chest_pain
+someone mentioned individual fainted and is not responding,unconscious
+not moving or reacting,unconscious
+jerking movements noticed,seizure
+patient reports chemical burn from cleaner,burns
+patient reports hot water spilled on leg,burns
+patient reports jerking movements noticed,seizure
+person collapsed suddenly,unconscious
+person says bleeding heavily from leg,bleeding
+patient reports vomiting after chemical exposure,poisoning
+person says burning throat and nausea,poisoning
+person says lost consciousness after falling,unconscious
+chest pain spreading to arm,chest_pain
+reported burnt hand while cooking,burns
+person says migraine symptoms with nausea,headache
+body shaking uncontrollably,seizure
+reported skin is blistered and red,burns
+patient reports hot water spilled on leg,burns
+patient reports trouble seeing in one or both eyes,stroke
+reported throbbing pain in the head,headache
+burning throat and nausea,poisoning
+person says migraine symptoms with nausea,headache
+person says chemical burn from cleaner,burns
+patient reports gasping for air,breathing_difficulty
+burnt hand while cooking,burns
+reported person collapsed suddenly,unconscious
+someone mentioned muscle spasms and convulsions,seizure
+reported not moving or reacting,unconscious
+someone mentioned feeling tightness in chest,chest_pain
+fire injury on arm,burns
+reported vomiting after chemical exposure,poisoning
+throbbing pain in the head,headache
+burning throat and nausea,poisoning
+someone mentioned rash after bee sting,allergic_reaction
+someone mentioned cut on hand is not stopping bleeding,bleeding
+person says slurred speech and drooping face,stroke
+reported sleeping and not waking up,unconscious
+person says not breathing properly,breathing_difficulty
+patient reports individual fainted and is not responding,unconscious
+person says rash after bee sting,allergic_reaction
+person says migraine symptoms with nausea,headache
+patient reports struggling to inhale,breathing_difficulty
+person says possible food poisoning symptoms,poisoning
+person says cut on hand is not stopping bleeding,bleeding
+someone mentioned lost consciousness after falling,unconscious
+blood pouring out after accident,bleeding
+reported painful pressure in chest,chest_pain
+patient reports skin is blistered and red,burns
+someone mentioned blood pouring out after accident,bleeding
+blood pouring out after accident,bleeding
+person says sharp pain in forehead,headache
+migraine symptoms with nausea,headache
+someone mentioned skin is blistered and red,burns
+patient reports vomiting after chemical exposure,poisoning
+reported bleeding heavily from leg,bleeding
+reported not breathing properly,breathing_difficulty
+reported person is having a seizure,seizure
+person says individual fainted and is not responding,unconscious
+patient reports vomiting after chemical exposure,poisoning
+patient reports sharp pain in forehead,headache
+someone mentioned person suddenly collapsed with twitching,seizure
+burning throat and nausea,poisoning
+blood pouring out after accident,bleeding
+reported individual fainted and is not responding,unconscious
+vomiting after chemical exposure,poisoning
+chemical burn from cleaner,burns
+patient reports person collapsed suddenly,unconscious
+possible food poisoning symptoms,poisoning
+patient reports severe allergic reaction,allergic_reaction
+patient reports sleeping and not waking up,unconscious
+person says wheezing and short of breath,breathing_difficulty

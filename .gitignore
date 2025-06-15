@@ -5,11 +5,6 @@ backend/__pycache__/
 *.pyo
 *.pyd
 
-# === Model Files and Large Data ===
-backend/*.h5
-backend/*.pkl
-backend/*.csv
-
 # === Dotenv Files ===
 backend/.env
 

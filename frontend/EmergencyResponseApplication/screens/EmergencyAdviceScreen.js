@@ -2,6 +2,9 @@ import React, { useEffect, useState, useContext } from "react";
 import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, ScrollView, Linking } from 'react-native';
 import axios from "axios";
 import { AppContext } from '../context/AppContext';
+import Constants from 'expo-constants';
+
+const baseURL = Constants.expoConfig.extra.API_URL;
 
 export default function EmergencyAdviceScreen() {
   const { location, hospitals } = useContext(AppContext);
@@ -23,7 +26,7 @@ export default function EmergencyAdviceScreen() {
     setResponse('');
 
     try {
-      const res = await axios.post('https://emergency-response-application.onrender.com/api/emergency-response', {
+      const res = await axios.post(`${baseURL}/api/emergency-response`, {
         message: input,
       });
 

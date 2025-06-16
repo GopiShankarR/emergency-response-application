@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, ScrollView, Linking } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, ScrollView, Linking, Alert, Platform } from 'react-native';
 import axios from "axios";
 import { AppContext } from '../context/AppContext';
 import Constants from 'expo-constants';
@@ -9,18 +9,56 @@ const baseURL =
   Constants.expoConfig?.extra?.API_URL ??
   "https://emergency-response-application.onrender.com";
 
+const emergencyMap = {
+  US: "911",
+  IN: "112",
+  GB: "999",
+  AU: "000",
+  CA: "911",
+  EU: "112",
+  // fallback will be used otherwise
+};
+
 export default function EmergencyAdviceScreen() {
   const { location, hospitals } = useContext(AppContext);
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
   const [nearestHospital, setNearestHospital] = useState(null);
+  const [localEmergencyNumber, setLocalEmergencyNumber] = useState('911');
 
   useEffect(() => {
     if (hospitals && hospitals.length > 0) {
       setNearestHospital(hospitals[0]);
     }
-  }, [hospitals]);
+
+    if (location) {
+      fetchEmergencyNumber(location.latitude, location.longitude);
+    }
+  }, [hospitals, location]);
+
+  // 🌐 Detect country and get emergency number
+  const fetchEmergencyNumber = async (lat, lng) => {
+    try {
+      const res = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
+        params: {
+          latlng: `${lat},${lng}`,
+          key: Constants.expoConfig?.extra?.GOOGLE_MAPS_API_KEY,
+        },
+      });
+
+      const countryComponent = res.data.results
+        .flatMap(result => result.address_components)
+        .find(component => component.types.includes("country"));
+
+      const countryCode = countryComponent?.short_name;
+      const emergency = emergencyMap[countryCode] || "911";
+      setLocalEmergencyNumber(emergency);
+    } catch (err) {
+      console.warn("Could not fetch local emergency number:", err.message);
+      setLocalEmergencyNumber("911");
+    }
+  };
 
   const getGuidance = async () => {
     if (!input) return;
@@ -50,7 +88,13 @@ export default function EmergencyAdviceScreen() {
       const phoneSearchUrl = `https://www.google.com/search?q=${query}`;
       Linking.openURL(phoneSearchUrl);
     }
-  }
+  };
+
+  const callEmergency = () => {
+    Linking.openURL(`tel:${localEmergencyNumber}`).catch(() => {
+      Alert.alert("Error", `Unable to initiate a call to ${localEmergencyNumber}`);
+    });
+  };
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -125,8 +169,8 @@ export default function EmergencyAdviceScreen() {
 
               <View style={{ marginTop: 10 }} />
               <Button
-                title="Call 911"
-                onPress={() => Linking.openURL('tel:911')}
+                title={`Call Emergency (${localEmergencyNumber})`}
+                onPress={callEmergency}
                 color="#d32f2f"
               />
             </>

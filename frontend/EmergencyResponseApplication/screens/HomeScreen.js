@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState, useContext } from "react";
-import { SafeAreaView, View, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Button, Modal, TextInput, TouchableOpacity, Switch } from 'react-native';
+import { SafeAreaView, View, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Button, Modal, TextInput, TouchableOpacity, Switch, Platform, Linking } from 'react-native';
 import { getCurrentLocation } from '../services/locationService.js';
 import { getNearbyHospitals } from '../services/hospitalService.js';
 import { getUserProfile, saveUserProfile } from "../data/userService.js";
@@ -75,6 +75,15 @@ export default function HomeScreen({ navigation }) {
     setShowProfileModal(false);
   }
 
+  const openInMaps = (lat, lng, name) => {
+    const label = encodeURIComponent(name || "Hospital");
+    const url = Platform.select({
+      ios: `https://maps.apple.com/?ll=${lat},${lng}&q=${label}`,
+      android: `geo:${lat},${lng}?q=${label}`,
+    });
+    Linking.openURL(url).catch(err => console.error("Couldn't open maps:", err));
+  }
+
   if(loading) return <ActivityIndicator size="large" color="#e53935" />;
 
   return (
@@ -84,37 +93,23 @@ export default function HomeScreen({ navigation }) {
         data={hospitals}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => {
+              if (item.location && item.location.lat && item.location.lng) {
+                openInMaps(item.location.lat, item.location.lng, item.name);
+              } else {
+                Alert.alert("Location unavailable", "This hospital has no coordinates.");
+              }
+            }}
+          >
             <Text style={styles.name}>{item.name}</Text>
             <Text>{item.address}</Text>
             <Text>Rating: {item.rating || 'N/A'}</Text>
-          </View>
+            <Text style={{ color: '#007BFF' }}>Tap to open in Maps</Text>
+          </TouchableOpacity>
         )}
       />
-      {/* <Button 
-        title="View Map of Nearby Hospitals"
-        onPress={() => navigation.navigate('MapView')}
-        color="#2196F3"
-      />
-
-      <View style={{ marginTop: 10 }} />
-
-      <Button 
-        title="Get Emergency Advice"
-        onPress={() => navigation.navigate('Emergency Advice', {
-          userLocation: location,
-          hospitals: hospitals
-        })}
-        color="#FF9800"
-      />
-
-      <View style={{ marginTop: 10 }} />
-
-      <Button 
-        title="Manage Emergency Contacts"
-        onPress={() => navigation.navigate('Contacts')}
-        color="#4CAF50"
-      /> */}
 
       <Modal visible={showProfileModal} animationType="slide" transparent>
         <View style={styles.modalOverlay}>
@@ -132,7 +127,6 @@ export default function HomeScreen({ navigation }) {
               onChangeText={setAge}
               style={styles.input}
             />
-            {/* <Text style={styles.label}>Blood Group</Text> */}
             <View style={styles.pickerWrapper}>
               <Picker
                 style={styles.picker}
@@ -150,7 +144,6 @@ export default function HomeScreen({ navigation }) {
                 <Picker.Item label="O-" value="O-" />
               </Picker>
             </View>
-            {/* <Text style={styles.label}>Sex</Text> */}
             <View style={styles.pickerWrapper}>
               <Picker
                 style={styles.picker}

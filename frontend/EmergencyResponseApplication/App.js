@@ -40,9 +40,9 @@ export default function App() {
           })}
         >
           <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
+          <Tab.Screen name="Emergency Advice" component={EmergencyAdviceScreen} initialParams={{ location: null, hospitals: [] }} />
           <Tab.Screen name="MapView" component={MapViewScreen} />
           <Tab.Screen name="Contacts" component={ContactManagerScreen} />
-          <Tab.Screen name="Emergency Advice" component={EmergencyAdviceScreen} initialParams={{ location: null, hospitals: [] }} />
         </Tab.Navigator>
       </NavigationContainer>
     </AppProvider>

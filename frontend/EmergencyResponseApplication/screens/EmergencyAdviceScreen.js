@@ -4,7 +4,10 @@ import axios from "axios";
 import { AppContext } from '../context/AppContext';
 import Constants from 'expo-constants';
 
-const baseURL = Constants.expoConfig.extra.API_URL;
+const baseURL =
+  Constants.manifest?.extra?.API_URL ??
+  Constants.expoConfig?.extra?.API_URL ??
+  "https://emergency-response-application.onrender.com";
 
 export default function EmergencyAdviceScreen() {
   const { location, hospitals } = useContext(AppContext);

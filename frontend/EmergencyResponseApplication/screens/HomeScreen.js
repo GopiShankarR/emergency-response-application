@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState, useContext } from "react";
-import { SafeAreaView, View, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Button, Modal, TextInput, TouchableOpacity, Switch, Platform, Linking } from 'react-native';
+import { SafeAreaView, View, Text, FlatList, ActivityIndicator, Alert, StyleSheet, Button, Modal, TextInput, TouchableOpacity, Switch, Platform, Linking, Animated, Easing } from 'react-native';
 import { getCurrentLocation } from '../services/locationService.js';
 import { getNearbyHospitals } from '../services/hospitalService.js';
 import { getUserProfile, saveUserProfile } from "../data/userService.js";
@@ -21,6 +21,7 @@ export default function HomeScreen({ navigation }) {
   const [phone, setPhone] = useState('');
   const [willingToDonate, setWillingToDonate] = useState(false);
   const [countryCode, setCountryCode] = useState('+1');
+  const bounceAnim = new Animated.Value(1);
 
   const { location, setLocation, hospitals, setHospitals } = useContext(AppContext);
 
@@ -65,6 +66,29 @@ export default function HomeScreen({ navigation }) {
       }
     })();
   }, []);
+
+  useEffect(() => {
+    const profileIncomplete = !name || !age || !bloodGroup || !sex || !phone;
+
+    if (profileIncomplete) {
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(bounceAnim, {
+            toValue: 1.2,
+            duration: 500,
+            easing: Easing.ease,
+            useNativeDriver: true,
+          }),
+          Animated.timing(bounceAnim, {
+            toValue: 1,
+            duration: 500,
+            easing: Easing.ease,
+            useNativeDriver: true,
+          }),
+        ])
+      ).start();
+    }
+  }, [name, age, bloodGroup, sex, phone]);
 
   const handleSaveProfile = async () => {
     if(!name || !age || !bloodGroup || !sex || !phone) {
@@ -112,58 +136,69 @@ export default function HomeScreen({ navigation }) {
       />
 
       <Modal visible={showProfileModal} animationType="slide" transparent>
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Your Profile</Text>
-            <TextInput 
-              placeholder="Name"
-              value={name}
-              onChangeText={setName}
-              style={styles.input}
-            />
-            <TextInput 
-              placeholder="Age"
-              value={age}
-              onChangeText={setAge}
-              style={styles.input}
-            />
-            <View style={styles.pickerWrapper}>
-              <Picker
-                style={styles.picker}
-                selectedValue={bloodGroup}
-                onValueChange={(itemValue) => setBloodGroup(itemValue)}
-              >
-                <Picker.Item label="Select Blood Group" value="" />
-                <Picker.Item label="A+" value="A+" />
-                <Picker.Item label="A-" value="A-" />
-                <Picker.Item label="B+" value="B+" />
-                <Picker.Item label="B-" value="B-" />
-                <Picker.Item label="AB+" value="AB+" />
-                <Picker.Item label="AB-" value="AB-" />
-                <Picker.Item label="O+" value="O+" />
-                <Picker.Item label="O-" value="O-" />
-              </Picker>
-            </View>
-            <View style={styles.pickerWrapper}>
-              <Picker
-                style={styles.picker}
-                selectedValue={sex}
-                onValueChange={(itemValue) => setSex(itemValue)}
-              >
-                <Picker.Item label="Select Sex" value="" />
-                <Picker.Item label="Male" value="M" />
-                <Picker.Item label="Female" value="F" />
-              </Picker>
-            </View>
-            <PhoneInput value={phone} onChange={setPhone} />
-            <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
-              <Text style={{ marginRight: 10 }}>Willing To Donate?</Text>
-              <Switch value={willingToDonate} onValueChange={setWillingToDonate} />
-            </View>
-            <Button title="Save Profile" onPress={handleSaveProfile} />
-          </View>
-        </View>
-      </Modal>
+  <TouchableOpacity
+    activeOpacity={1}
+    onPressOut={() => setShowProfileModal(false)}
+    style={styles.modalOverlay}
+  >
+    <View style={styles.modalContent}>
+      <TouchableOpacity
+        style={styles.closeButton}
+        onPress={() => setShowProfileModal(false)}
+      >
+        <Ionicons name="close-circle" size={28} color="#e53935" />
+      </TouchableOpacity>
+
+      <Text style={styles.modalTitle}>Your Profile</Text>
+      <TextInput 
+        placeholder="Name"
+        value={name}
+        onChangeText={setName}
+        style={styles.input}
+      />
+      <TextInput 
+        placeholder="Age"
+        value={age}
+        onChangeText={setAge}
+        style={styles.input}
+      />
+      <View style={styles.pickerWrapper}>
+        <Picker
+          style={styles.picker}
+          selectedValue={bloodGroup}
+          onValueChange={(itemValue) => setBloodGroup(itemValue)}
+        >
+          <Picker.Item label="Select Blood Group" value="" />
+          <Picker.Item label="A+" value="A+" />
+          <Picker.Item label="A-" value="A-" />
+          <Picker.Item label="B+" value="B+" />
+          <Picker.Item label="B-" value="B-" />
+          <Picker.Item label="AB+" value="AB+" />
+          <Picker.Item label="AB-" value="AB-" />
+          <Picker.Item label="O+" value="O+" />
+          <Picker.Item label="O-" value="O-" />
+        </Picker>
+      </View>
+      <View style={styles.pickerWrapper}>
+        <Picker
+          style={styles.picker}
+          selectedValue={sex}
+          onValueChange={(itemValue) => setSex(itemValue)}
+        >
+          <Picker.Item label="Select Sex" value="" />
+          <Picker.Item label="Male" value="M" />
+          <Picker.Item label="Female" value="F" />
+        </Picker>
+      </View>
+      <PhoneInput value={phone} onChange={setPhone} />
+      <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 10 }}>
+        <Text style={{ marginRight: 10 }}>Willing To Donate?</Text>
+        <Switch value={willingToDonate} onValueChange={setWillingToDonate} />
+      </View>
+      <Button title="Save Profile" onPress={handleSaveProfile} />
+    </View>
+  </TouchableOpacity>
+</Modal>
     </SafeAreaView>
   );
 };
@@ -229,5 +264,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     height: 48,
     justifyContent: 'center'
-  }
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    zIndex: 1,
+  },
 });

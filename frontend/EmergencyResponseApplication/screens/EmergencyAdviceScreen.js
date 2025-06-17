@@ -1,23 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
-import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, ScrollView, Linking, Alert, Platform } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, ScrollView, Linking, Alert } from 'react-native';
 import axios from "axios";
 import { AppContext } from '../context/AppContext';
 import Constants from 'expo-constants';
+import { Ionicons } from '@expo/vector-icons';
 
 const baseURL =
   Constants.manifest?.extra?.API_URL ??
   Constants.expoConfig?.extra?.API_URL ??
   "https://emergency-response-application.onrender.com";
-
-const emergencyMap = {
-  US: "911",
-  IN: "112",
-  GB: "999",
-  AU: "000",
-  CA: "911",
-  EU: "112",
-  // fallback will be used otherwise
-};
 
 export default function EmergencyAdviceScreen() {
   const { location, hospitals } = useContext(AppContext);
@@ -25,54 +16,35 @@ export default function EmergencyAdviceScreen() {
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
   const [nearestHospital, setNearestHospital] = useState(null);
-  const [localEmergencyNumber, setLocalEmergencyNumber] = useState('911');
+  const [timeoutReached, setTimeoutReached] = useState(false);
 
   useEffect(() => {
     if (hospitals && hospitals.length > 0) {
       setNearestHospital(hospitals[0]);
     }
+  }, [hospitals]);
 
-    if (location) {
-      fetchEmergencyNumber(location.latitude, location.longitude);
-    }
-  }, [hospitals, location]);
-
-  // 🌐 Detect country and get emergency number
-  const fetchEmergencyNumber = async (lat, lng) => {
-    try {
-      const res = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
-        params: {
-          latlng: `${lat},${lng}`,
-          key: Constants.expoConfig?.extra?.GOOGLE_MAPS_API_KEY,
-        },
-      });
-
-      const countryComponent = res.data.results
-        .flatMap(result => result.address_components)
-        .find(component => component.types.includes("country"));
-
-      const countryCode = countryComponent?.short_name;
-      const emergency = emergencyMap[countryCode] || "911";
-      setLocalEmergencyNumber(emergency);
-    } catch (err) {
-      console.warn("Could not fetch local emergency number:", err.message);
-      setLocalEmergencyNumber("911");
-    }
-  };
-
-  const getGuidance = async () => {
-    if (!input) return;
+  const getGuidance = async (text = input) => {
+    if (!text) return;
 
     setLoading(true);
-    setResponse('');
+    setTimeoutReached(false);
+    setResponse(null);
+
+    const timeout = setTimeout(() => {
+      setTimeoutReached(true);
+      setLoading(false);
+    }, 15000);
 
     try {
       const res = await axios.post(`${baseURL}/api/emergency-response`, {
-        message: input,
+        message: text,
       });
 
+      clearTimeout(timeout);
       setResponse(res.data);
     } catch (error) {
+      clearTimeout(timeout);
       setResponse({
         emergency_type: "unknown",
         message: "Error fetching advice: " + error.message,
@@ -91,9 +63,18 @@ export default function EmergencyAdviceScreen() {
   };
 
   const callEmergency = () => {
-    Linking.openURL(`tel:${localEmergencyNumber}`).catch(() => {
-      Alert.alert("Error", `Unable to initiate a call to ${localEmergencyNumber}`);
-    });
+    Linking.openURL(`tel:911`);
+  };
+
+  const handleQuickHelp = (value) => {
+    setInput(value);
+    setResponse(null);
+    getGuidance(value);
+  };
+
+  const handleInputChange = (text) => {
+    setInput(text);
+    setResponse(null);
   };
 
   return (
@@ -114,10 +95,7 @@ export default function EmergencyAdviceScreen() {
             { label: "Poison", value: "swallowed cleaning chemical" },
           ].map((item, idx) => (
             <View key={idx} style={styles.quickButton}>
-              <Text onPress={() => {
-                setInput(item.value);
-                getGuidance();
-              }} style={styles.quickButtonText}>
+              <Text onPress={() => handleQuickHelp(item.value)} style={styles.quickButtonText}>
                 {item.label}
               </Text>
             </View>
@@ -130,11 +108,31 @@ export default function EmergencyAdviceScreen() {
         multiline
         placeholder="Describe the emergency..."
         value={input}
-        onChangeText={setInput}
+        onChangeText={handleInputChange}
       />
-      <Button title="Get Help" onPress={getGuidance} />
+
+      <View style={styles.buttonRow}>
+        <View style={styles.getHelpButton}>
+          <Button title="Get Help" onPress={() => getGuidance()} />
+        </View>
+        <Ionicons
+          name="refresh"
+          size={28}
+          color="#e53935"
+          onPress={() => {
+            setInput('');
+            setResponse(null);
+            setTimeoutReached(false);
+          }}
+        />
+      </View>
 
       {loading && <ActivityIndicator size="large" color="#e53935" style={{ marginTop: 10 }} />}
+      {timeoutReached && (
+        <Text style={{ color: 'red', marginTop: 10 }}>
+          Request timed out. Please try again.
+        </Text>
+      )}
 
       {response && (
         <View style={styles.response}>
@@ -169,7 +167,7 @@ export default function EmergencyAdviceScreen() {
 
               <View style={{ marginTop: 10 }} />
               <Button
-                title={`Call Emergency (${localEmergencyNumber})`}
+                title="Call 911"
                 onPress={callEmergency}
                 color="#d32f2f"
               />
@@ -255,5 +253,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#c62828',
     textAlign: 'center'
-  }
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  getHelpButton: {
+    flex: 1,
+    marginRight: 12,
+  },
 });

@@ -6,11 +6,11 @@ const baseURL =
   Constants.expoConfig?.extra?.API_URL ??
   "https://emergency-response-application.onrender.com";
 
-export const getNearbyHospitals = async (latitude, longitude) => {
+export const getNearbyHospitals = async (latitude, longitude, insurance = "") => {
   try {
-    console.log("Calling backend with:", latitude, longitude);
+    console.log("Calling backend with:", latitude, longitude, insurance);
     const response = await axios.get(`${baseURL}/api/nearby-hospitals`, {
-      params: { lat: latitude, long: longitude },
+      params: { lat: latitude, long: longitude, insurance: insurance },
     });
 
     return response.data;

@@ -8,6 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
 import PhoneInput from '../components/PhoneInput';
 import { AppContext } from '../context/AppContext';
+import { INSURANCES } from "../data/insurance_list.js";
 
 export default function HomeScreen({ navigation }) {
   // const [location, setLocation] = useState(null);
@@ -20,10 +21,11 @@ export default function HomeScreen({ navigation }) {
   const [sex, setSex] = useState('');
   const [phone, setPhone] = useState('');
   const [willingToDonate, setWillingToDonate] = useState(false);
-  const [countryCode, setCountryCode] = useState('+1');
+  // const [countryCode, setCountryCode] = useState('+1');
   const bounceAnim = new Animated.Value(1);
+  // const [insurance, setInsurance] = useState('');
 
-  const { location, setLocation, hospitals, setHospitals } = useContext(AppContext);
+  const { location, setLocation, hospitals, setHospitals, insurance, setInsurance } = useContext(AppContext);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -42,15 +44,10 @@ export default function HomeScreen({ navigation }) {
     (async () => {
       try {
         const loc = await getCurrentLocation();
-        console.log("User location:", loc);
         setLocation(loc);
 
-        const hospitalList = await getNearbyHospitals(loc.latitude, loc.longitude);
-        // console.log("Hospitals fetched:", hospitalList);
-        setHospitals(hospitalList);
-
         const profile = await getUserProfile();
-        if(!profile) {
+        if (!profile) {
           setShowProfileModal(true);
         } else {
           setName(profile.name);
@@ -58,14 +55,30 @@ export default function HomeScreen({ navigation }) {
           setBloodGroup(profile.bloodGroup);
           setSex(profile.sex);
           setPhone(profile.phone);
+          setWillingToDonate(profile.willingToDonate || false);
+          setInsurance(profile.insurance || '');
         }
-      } catch(error) {
-        Alert.alert('Error', error.message);
+      } catch (error) {
+        Alert.alert('Error loading profile or location');
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    console.log("Calling getNearbyHospitals with:", location, insurance);
+    if (!location) return;
+
+    (async () => {
+      try {
+        const hospitalList = await getNearbyHospitals(location.latitude, location.longitude, insurance);
+        setHospitals(hospitalList);
+      } catch (error) {
+        Alert.alert('Error fetching hospitals');
       } finally {
         setLoading(false);
       }
     })();
-  }, []);
+  }, [location, insurance]);
 
   useEffect(() => {
     const profileIncomplete = !name || !age || !bloodGroup || !sex || !phone;
@@ -91,11 +104,11 @@ export default function HomeScreen({ navigation }) {
   }, [name, age, bloodGroup, sex, phone]);
 
   const handleSaveProfile = async () => {
-    if(!name || !age || !bloodGroup || !sex || !phone) {
+    if(!name || !age || !bloodGroup || !sex || !phone || !willingToDonate || !insurance) {
       Alert.alert("Please fill all the fields");
       return;
     }
-    await saveUserProfile({ name, age, bloodGroup, sex, phone, willingToDonate });
+    await saveUserProfile({ name, age, bloodGroup, sex, phone, willingToDonate, insurance });
     setShowProfileModal(false);
   }
 
@@ -107,6 +120,38 @@ export default function HomeScreen({ navigation }) {
     });
     Linking.openURL(url).catch(err => console.error("Couldn't open maps:", err));
   }
+
+  const renderInsuranceBadge = (item) => {
+    const acceptedList = item.acceptedInsurance || [];
+
+    if (!Array.isArray(acceptedList) || acceptedList.length === 0) {
+      return (
+        <Text style={{ color: 'gray', fontStyle: 'italic', marginTop: 4 }}>
+          Not Covered
+        </Text>
+      );
+    }
+
+    return (
+      <Text style={{ fontStyle: 'italic', marginTop: 4 }}>
+        {acceptedList.map((ins, idx) => {
+          const isUserInsurance = ins.toLowerCase() === insurance.toLowerCase();
+          return (
+            <Text
+              key={idx}
+              style={{
+                color: isUserInsurance ? 'green' : 'red',
+                fontWeight: isUserInsurance ? 'bold' : 'normal',
+                fontStyle: 'italic'
+              }}
+            >
+              {ins}{idx < acceptedList.length - 1 ? ', ' : ''}
+            </Text>
+          );
+        })}
+      </Text>
+    );
+  };
 
   if(loading) return <ActivityIndicator size="large" color="#e53935" />;
 
@@ -130,6 +175,7 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.name}>{item.name}</Text>
             <Text>{item.address}</Text>
             <Text>Rating: {item.rating || 'N/A'}</Text>
+            {renderInsuranceBadge(item)}
             <Text style={{ color: '#007BFF' }}>Tap to open in Maps</Text>
           </TouchableOpacity>
         )}
@@ -188,6 +234,14 @@ export default function HomeScreen({ navigation }) {
           <Picker.Item label="Select Sex" value="" />
           <Picker.Item label="Male" value="M" />
           <Picker.Item label="Female" value="F" />
+        </Picker>
+      </View>
+      <View style={styles.pickerWrapper}>
+        <Picker selectedValue={insurance} onValueChange={setInsurance} >
+          <Picker.Item label="Select Insurance" value="" />
+          {INSURANCES.map((ins, index) => (
+            <Picker.Item label={ins.charAt(0).toUpperCase() + ins.slice(1)} value={ins.toLowerCase()} key={index} />
+          ))}
         </Picker>
       </View>
       <PhoneInput value={phone} onChange={setPhone} />

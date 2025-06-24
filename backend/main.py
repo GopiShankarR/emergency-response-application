@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import pandas as pd
 from emergency_classifier import EmergencyClassifier
 from dotenv import load_dotenv
 import os
@@ -33,6 +34,13 @@ else:
     logger.info("Redis disabled in current environment.")
 
 classifier = EmergencyClassifier()
+
+insurance_df = pd.read_csv("mock_insurance_data.csv")
+insurance_map = {
+    row["Hospital"]: [ins.strip().lower() for ins in row["Accepted Insurances"].split(",")]
+    for _, row in insurance_df.iterrows()
+}
+# print(insurance_map)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -73,6 +81,7 @@ def classify_emergency():
 def get_nearby_hospitals():
     lat = request.args.get("lat")
     long = request.args.get("long")
+    insurance = request.args.get("insurance", "").strip().lower()
     radius = 5000
 
     if not(lat and long):
@@ -97,15 +106,21 @@ def get_nearby_hospitals():
     try:
         res = requests.get(url)
         places = res.json().get("results", [])
-        hospitals = [
-            {
-                "name": place.get("name"),
+        hospitals = []
+
+        for place in places:
+            name = place.get("name", "")
+            accepted_insurances = insurance_map.get(name, [])
+            is_accepted = insurance in accepted_insurances
+
+            hospitals.append({
+                "name": name,
                 "address": place.get("vicinity"),
                 "rating": place.get("rating"),
-                "location": place["geometry"]["location"]
-            }
-            for place in places if place.get("geometry") and place["geometry"].get("location")
-        ]
+                "location": place.get("geometry", {}).get("location"),
+                "acceptsInsurance": is_accepted,
+                "acceptedInsurance": accepted_insurances
+            })
 
         if redis_client:
             try:
@@ -114,6 +129,7 @@ def get_nearby_hospitals():
             except Exception as e:
                 logger.warning(f"Failed to set Redis cache: {e}")
 
+        print(hospitals)
         return jsonify(hospitals)
     except Exception as e:
         logger.error(f"Error fetching hospital data: {e}")

@@ -31,7 +31,7 @@ export default function App() {
           screenOptions={({ route }) => ({
             tabBarIcon: ({ color, size }) => {
               let iconName = 'home';
-              if (route.name === 'Emergency') iconName = 'alert-circle';
+              if (route.name === 'Emergency Advice') iconName = 'medkit';
               if (route.name === 'Contacts') iconName = 'people';
               if (route.name === 'Blood Finder') iconName = 'water'
               if (route.name === 'MapView') iconName = 'map';

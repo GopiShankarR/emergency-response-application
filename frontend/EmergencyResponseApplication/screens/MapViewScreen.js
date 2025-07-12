@@ -154,11 +154,13 @@ export default function MapViewScreen() {
 
               <Marker
                 coordinate={{
-                  latitude: (userLocation.latitude + selectedHospital.location.lat) / 2 + 0.0012,
-                  longitude: (userLocation.longitude + selectedHospital.location.lng) / 2,
+                  latitude:
+                    Math.min(userLocation.latitude, selectedHospital.location.lat) +
+                    Math.abs(userLocation.latitude - selectedHospital.location.lat) * 0.6,
+                  longitude:
+                    (userLocation.longitude + selectedHospital.location.lng) / 2,
                 }}
                 anchor={{ x: 0.5, y: 1 }}
-                // calloutAnchor={{ x: 0.5, y: 0.5 }}
               >
                 <View style={styles.distanceLabel}>
                   <Text style={styles.distanceText}>{selectedHospital.distanceMi} mi</Text>
@@ -241,6 +243,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
+    flexShrink: 1,
+    maxWidth: "85%"
   },
   address: {
     color: "#2196F3",
@@ -252,25 +256,27 @@ const styles = StyleSheet.create({
     marginBottom: 6,
   },
   distanceLabel: {
-    backgroundColor: 'white',
-    paddingHorizontal: 10,
+    backgroundColor: '#e8f5e8',
+    paddingHorizontal: 1,
     paddingVertical: 6,
-    borderRadius: 6,
-    borderColor: '#ccc',
+    borderRadius: 12,
+    borderColor: '#aaa',
     borderWidth: 1,
-    elevation: 4,
+    elevation: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 3,
-    zIndex: 10000,
-    minWidth: 40,
     alignItems: 'center',
     justifyContent: 'center',
+    minWidth: 30,
+    maxWidth: 180,
   },
   distanceText: {
-    fontWeight: 'bold',
+    fontSize: 14,
+    fontWeight: '600',
     color: '#333',
+    textAlign: 'center',
   },
   detailRow: {
     flexDirection: 'row',

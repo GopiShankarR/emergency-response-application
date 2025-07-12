@@ -69,7 +69,9 @@ export default function EmergencyAdviceScreen() {
   const handleQuickHelp = (value) => {
     setInput(value);
     setResponse(null);
-    getGuidance(value);
+    setTimeout(() => {
+      getGuidance(value);
+    }, 0);
   };
 
   const handleInputChange = (text) => {
@@ -79,20 +81,19 @@ export default function EmergencyAdviceScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Emergency Guidance</Text>
 
       {!response && !loading && (
         <View style={styles.quickButtonsContainer}>
           {[
-            { label: "Seizure", value: "person is having a seizure" },
-            { label: "Breathing", value: "not breathing properly" },
-            { label: "Bleeding", value: "bleeding heavily" },
-            { label: "Unconscious", value: "person collapsed" },
-            { label: "Headache", value: "severe headache" },
-            { label: "Chest Pain", value: "chest pain spreading to arm" },
-            { label: "Stroke", value: "slurred speech and numbness" },
-            { label: "Burn", value: "burnt hand while cooking" },
-            { label: "Poison", value: "swallowed cleaning chemical" },
+            { label: "Seizure", value: "Person is having a seizure" },
+            { label: "Breathing", value: "Not breathing properly" },
+            { label: "Bleeding", value: "Bleeding heavily" },
+            { label: "Unconscious", value: "Person collapsed" },
+            { label: "Headache", value: "Severe headache" },
+            { label: "Chest Pain", value: "Chest pain spreading to arm" },
+            { label: "Stroke", value: "Slurred speech and numbness" },
+            { label: "Burn", value: "Burnt hand while cooking" },
+            { label: "Poison", value: "Swallowed cleaning chemical" },
           ].map((item, idx) => (
             <View key={idx} style={styles.quickButton}>
               <Text onPress={() => handleQuickHelp(item.value)} style={styles.quickButtonText}>
@@ -136,51 +137,43 @@ export default function EmergencyAdviceScreen() {
 
       {response && (
         <View style={styles.response}>
-          {response.emergency_type !== 'unknown' ? (
-            <>
-              <Text style={styles.subheading}>Detected Emergency: {response.emergency_type}</Text>
+          <Text style={styles.subheading}>Detected Emergency: {response.emergency_type}</Text>
 
-              <Text style={styles.section}>Steps:</Text>
-              {response.remedy?.steps.map((step, idx) => (
-                <Text key={idx}>• {step}</Text>
-              ))}
+          <View style={styles.cardSectionBlue}>
+            <Text style={styles.sectionTitle}>Steps:</Text>
+            {response.remedy?.steps.map((step, idx) => (
+              <Text key={idx} style={styles.bulletText}>• {step}</Text>
+            ))}
+          </View>
 
-              <Text style={styles.section}>Warnings:</Text>
-              {response.remedy?.warnings.map((warn, idx) => (
-                <Text key={idx}>• {warn}</Text>
-              ))}
+          <View style={styles.cardSectionYellow}>
+            <Text style={styles.sectionTitle}>Warnings:</Text>
+            {response.remedy?.warnings.map((warn, idx) => (
+              <Text key={idx} style={styles.bulletText}>• {warn}</Text>
+            ))}
+          </View>
 
-              <Text style={styles.section}>Action:</Text>
-              <Text>{response.remedy?.call_911}</Text>
+          <View style={styles.cardSectionRed}>
+            <Text style={styles.sectionTitle}>Action:</Text>
+            <Text style={styles.bulletText}>{response.remedy?.call_911}</Text>
+          </View>
 
-              <Text style={styles.disclaimer}>{response.disclaimer}</Text>
+          <Text style={styles.disclaimer}>
+            ⚠️ This is not medical advice. Call emergency services for serious situations.
+          </Text>
 
-              {nearestHospital && (
-                <View style={styles.hospitalCard}>
-                  <Text style={styles.subheading}>Nearest Hospital</Text>
-                  <Text>{nearestHospital.name}</Text>
-                  <Text>{nearestHospital.address}</Text>
-                  <Text>Rating: {nearestHospital.rating || 'N/A'}</Text>
-                  <Button title="Call Hospital" onPress={callHospital} color="#e91e63" />
-                </View>
-              )}
-
-              <View style={{ marginTop: 10 }} />
-              <Button
-                title="Call 911"
-                onPress={callEmergency}
-                color="#d32f2f"
-              />
-            </>
-          ) : (
-            <>
-              <Text style={styles.subheading}>Unknown Emergency</Text>
-              <Text>{response.message}</Text>
-              {response.general_advice && (
-                <Text style={styles.section}>General Advice: {response.general_advice}</Text>
-              )}
-            </>
+          {nearestHospital && (
+            <View style={styles.hospitalCard}>
+              <Text style={styles.subheading}>Nearest Hospital</Text>
+              <Text style={styles.hospitalName}>{nearestHospital.name}</Text>
+              <Text>{nearestHospital.address}</Text>
+              <Text style={{ marginBottom: 10 }}>Rating: {nearestHospital.rating || 'N/A'}</Text>
+              <Button title="CALL HOSPITAL" onPress={callHospital} color="#e91e63" />
+            </View>
           )}
+
+          <View style={{ marginTop: 12 }} />
+          <Button title="CALL 911" onPress={callEmergency} color="#d32f2f" />
         </View>
       )}
     </ScrollView>
@@ -263,4 +256,44 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 12,
   },
+  cardSectionBlue: {
+    backgroundColor: '#e3f2fd',
+    padding: 12,
+    marginTop: 15,
+    borderLeftWidth: 5,
+    borderLeftColor: '#2196f3',
+    borderRadius: 8,
+  },
+  cardSectionYellow: {
+    backgroundColor: '#fffde7',
+    padding: 12,
+    marginTop: 15,
+    borderLeftWidth: 5,
+    borderLeftColor: '#fbc02d',
+    borderRadius: 8,
+  },
+  cardSectionRed: {
+    backgroundColor: '#ffebee',
+    padding: 12,
+    marginTop: 15,
+    borderLeftWidth: 5,
+    borderLeftColor: '#f44336',
+    borderRadius: 8,
+  },
+  sectionTitle: {
+    fontWeight: '700',
+    marginBottom: 6,
+    fontSize: 15,
+  },
+  bulletText: {
+    fontSize: 14.5,
+    lineHeight: 22,
+    marginLeft: 2,
+  },
+  hospitalName: {
+    fontWeight: '600',
+    fontSize: 15.5,
+    marginTop: 6,
+    marginBottom: 2,
+  }
 });

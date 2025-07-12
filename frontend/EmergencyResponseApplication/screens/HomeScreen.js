@@ -133,23 +133,39 @@ export default function HomeScreen({ navigation }) {
     }
 
     return (
-      <Text style={{ fontStyle: 'italic', marginTop: 4 }}>
+      <View style={{ marginTop: 6, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
+        <Text style={{ fontWeight: 'bold', marginRight: 5 }}>Accepted Insurances:</Text>
         {acceptedList.map((ins, idx) => {
           const isUserInsurance = ins.toLowerCase() === insurance.toLowerCase();
+          const formatted = ins.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase());
+
           return (
-            <Text
+            <View
               key={idx}
               style={{
-                color: isUserInsurance ? 'green' : 'red',
-                fontWeight: isUserInsurance ? 'bold' : 'normal',
-                fontStyle: 'italic'
+                backgroundColor: isUserInsurance ? '#d4edda' : '#f8d7da',
+                borderColor: isUserInsurance ? '#28a745' : '#dc3545',
+                borderWidth: 1,
+                borderRadius: 16,
+                paddingHorizontal: 10,
+                paddingVertical: 4,
+                marginRight: 5,
+                marginBottom: 5,
               }}
             >
-              {ins}{idx < acceptedList.length - 1 ? ', ' : ''}
-            </Text>
+              <Text
+                style={{
+                  color: isUserInsurance ? '#155724' : '#721c24',
+                  fontWeight: isUserInsurance ? 'bold' : 'normal',
+                  fontSize: 12,
+                }}
+              >
+                {formatted}
+              </Text>
+            </View>
           );
         })}
-      </Text>
+      </View>
     );
   };
 

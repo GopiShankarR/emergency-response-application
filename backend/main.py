@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd
 from emergency_classifier import EmergencyClassifier
+from difflib import get_close_matches
 from dotenv import load_dotenv
 import os
 import requests
@@ -35,7 +36,53 @@ else:
 
 classifier = EmergencyClassifier()
 
+INSURANCE_POOL = [
+    "aetna", "cigna", "blue cross blue shield", "humana", "unitedhealthcare",
+    "anthem", "oscar health", "kaiser permanente", "medicaid", "medicare"
+]
+
 insurance_df = pd.read_csv("mock_insurance_data.csv")
+canonical_df = pd.read_csv("canonical_hospitals.csv")
+
+alias_to_canonical = {
+    row["alias_name"].strip().lower(): row["canonical_name"].strip()
+    for _, row in canonical_df.iterrows()
+}
+hospital_to_insurance = {
+    row["Hospital"].strip(): [x.strip() for x in row["Accepted Insurances"].split(",")]
+    for _, row in insurance_df.iterrows()
+}
+
+def normalize_name(name):
+    return name.lower().replace("’", "'").replace(".", "").strip()
+
+def get_or_create_canonical_and_insurance(hospital_name):
+    name_lower = hospital_name.lower().strip()
+
+    if name_lower in alias_to_canonical:
+        canonical = alias_to_canonical[name_lower]
+    else:
+        canonical = hospital_name.strip()
+
+        pd.DataFrame([{
+            "canonical_name": canonical,
+            "alias_name": hospital_name.strip()
+        }]).to_csv("canonical_hospitals.csv", mode="a", index=False, header=False)
+
+        alias_to_canonical[name_lower] = canonical
+
+        import random
+        insurances = random.sample(INSURANCE_POOL, k=random.randint(2, 5))
+        pd.DataFrame([{
+            "Hospital": canonical,
+            "Accepted Insurances": ", ".join(insurances)
+        }]).to_csv("mock_insurance_data.csv", mode="a", index=False, header=False, quoting=1)
+
+        hospital_to_insurance[canonical] = insurances
+
+    return canonical, hospital_to_insurance.get(canonical, [])
+
+
 insurance_map = {
     row["Hospital"]: [ins.strip().lower() for ins in row["Accepted Insurances"].split(",")]
     for _, row in insurance_df.iterrows()
@@ -110,8 +157,16 @@ def get_nearby_hospitals():
 
         for place in places:
             name = place.get("name", "")
-            accepted_insurances = insurance_map.get(name, [])
-            is_accepted = insurance in accepted_insurances
+            canonical_name, accepted_insurances = get_or_create_canonical_and_insurance(name)
+
+            is_accepted = insurance in [ins.lower() for ins in accepted_insurances]
+
+            # if not accepted_insurances:
+            #     close_match = get_close_matches(name, insurance_map.keys(), n=1, cutoff=0.7)
+            #     if close_match:
+            #         accepted_insurances = insurance_map.get(close_match[0], [])
+            
+            # is_accepted = insurance in accepted_insurances
 
             hospitals.append({
                 "name": name,

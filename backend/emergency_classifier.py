@@ -16,61 +16,146 @@ class EmergencyClassifier:
     def _load_remedies(self):
         return {
             'unconscious': {
-                'steps': ['Check responsiveness', 'Call 911', 'Check breathing', 'Place in recovery position'],
-                'warnings': ['Don\'t give food or drink'],
-                'call_911': 'Always call 911 for unconscious cases'
+                'steps': [
+                    'Check for responsiveness by tapping and shouting.',
+                    'Call 911 immediately if unresponsive.',
+                    'Check for breathing and pulse.',
+                    'If not breathing, begin CPR.',
+                    'If breathing, place in recovery position.'
+                ],
+                'warnings': [
+                    'Do not leave the person alone.',
+                    'Do not give them anything by mouth.'
+                ],
+                'call_911': 'Always call 911 if someone is unconscious.'
             },
             'seizure': {
-                'steps': ['Stay Calm', 'Clear the area', 'Cushion head', 'Time seizure'],
-                'warnings': ['Do not restrain', 'Do not put anything in mouth'],
-                'call_911': 'Call 911 if seizure >5 mins or injured'
+                'steps': [
+                    'Stay calm and ensure the person is safe.',
+                    'Gently ease them to the ground if standing.',
+                    'Turn them on their side to help with breathing.',
+                    'Place something soft under their head.',
+                    'Remove glasses and loosen tight clothing.',
+                    'Time the seizure. If over 5 minutes, call 911.'
+                ],
+                'warnings': [
+                    'Do not restrain the person.',
+                    'Do not put anything in their mouth.',
+                    'Do not try to move them unless they are in danger.'
+                ],
+                'call_911': 'Call 911 if seizure lasts more than 5 minutes, or if it’s the person’s first seizure.'
             },
             'bleeding': {
-                'steps': ['Apply pressure', 'Elevate wound', 'Call 911'],
-                'warnings': ['Do not remove embedded objects'],
-                'call_911': 'Call 911 for heavy bleeding'
+                'steps': [
+                    'Put on gloves if available.',
+                    'Apply firm pressure with a clean cloth.',
+                    'Elevate the wounded area if possible.',
+                    'Add more cloths without removing soaked ones.',
+                    'Call 911 if bleeding doesn’t stop or is severe.'
+                ],
+                'warnings': [
+                    'Do not remove embedded objects; stabilize instead.',
+                    'Avoid using a tourniquet unless trained.'
+                ],
+                'call_911': 'Call 911 for heavy or uncontrollable bleeding.'
             },
             'breathing_difficulty': {
                 'steps': [
-                    'Help person sit upright',
-                    'Loosen tight clothing',
-                    'Assist with inhaler if available',
-                    'Call 911 if symptoms worsen'
+                    'Help the person into a seated, upright position.',
+                    'Loosen tight clothing around neck or chest.',
+                    'Encourage slow, steady breathing.',
+                    'If they have an inhaler or epinephrine, assist them.',
+                    'Call 911 if breathing does not improve.'
                 ],
-                'warnings': ['Don’t let them lie down', 'Avoid crowding'],
-                'call_911': 'Call 911 if breathing does not improve quickly'
+                'warnings': [
+                    'Do not let them lie down flat.',
+                    'Avoid panicking or crowding them.'
+                ],
+                'call_911': 'Call 911 if breathing does not stabilize quickly.'
             },
             'headache': {
-                'steps': ['Encourage hydration', 'Dim the lights', 'Apply cold compress'],
-                'warnings': ['Seek help if headache is sudden or severe'],
-                'call_911': 'Call 911 if headache is accompanied by vision loss or confusion'
+                'steps': [
+                    'Encourage rest in a quiet, dark room.',
+                    'Provide water to hydrate.',
+                    'Apply a cold compress to forehead or neck.',
+                    'Encourage breathing exercises or relaxation.'
+                ],
+                'warnings': [
+                    'Seek emergency care if the headache is sudden and severe.',
+                    'Watch for confusion, fever, or stiff neck — these may indicate a serious condition.'
+                ],
+                'call_911': 'Call 911 if headache is accompanied by fainting, confusion, or vision loss.'
             },
             'chest_pain': {
-                'steps': ['Have the person sit down', 'Loosen tight clothing', 'Keep them calm'],
-                'warnings': ['Do not allow physical activity'],
-                'call_911': 'Call 911 immediately for chest pain'
+                'steps': [
+                    'Help the person sit down and rest.',
+                    'Loosen tight clothing.',
+                    'Keep the person calm and monitor symptoms.',
+                    'Ask if they have prescribed nitroglycerin and help if needed.',
+                    'Call 911 immediately.'
+                ],
+                'warnings': [
+                    'Do not allow physical exertion.',
+                    'Do not give anything to eat or drink.'
+                ],
+                'call_911': 'Call 911 immediately for any kind of chest pain.'
             },
             'stroke': {
-                'steps': ['Use FAST test (Face, Arms, Speech, Time)', 'Keep the person still', 'Note symptom start time'],
-                'warnings': ['Do not give food or drink'],
-                'call_911': 'Call 911 immediately for stroke symptoms'
+                'steps': [
+                    'Use the FAST method: Face drooping, Arm weakness, Speech difficulty, Time to call 911.',
+                    'Keep the person seated or lying flat and calm.',
+                    'Note the time symptoms started.',
+                    'Do not offer food, water, or medication.'
+                ],
+                'warnings': [
+                    'Do not move the person unless in danger.',
+                    'Avoid letting them fall asleep or "walk it off".'
+                ],
+                'call_911': 'Call 911 immediately if stroke symptoms are observed.'
             },
             'burns': {
-                'steps': ['Cool burn with water', 'Cover with sterile cloth', 'Avoid popping blisters'],
-                'warnings': ['Do not apply creams or oils'],
-                'call_911': 'Call 911 for large or severe burns'
+                'steps': [
+                    'Remove the person from the source of burn.',
+                    'Cool the burn with clean, cool (not cold) water for 10–20 minutes.',
+                    'Cover loosely with sterile cloth or non-stick dressing.',
+                    'Avoid touching or bursting blisters.'
+                ],
+                'warnings': [
+                    'Do not apply butter, oil, or creams.',
+                    'Do not use ice directly on burns.'
+                ],
+                'call_911': 'Call 911 for burns that are large, deep, or on face/hands/genitals.'
             },
             'allergic_reaction': {
-                'steps': ['Use epinephrine if available', 'Call 911', 'Loosen tight clothing'],
-                'warnings': ['Watch for breathing difficulty'],
-                'call_911': 'Call 911 for severe allergic reactions'
+                'steps': [
+                    'Check for signs of severe reaction: swelling, difficulty breathing.',
+                    'Use an epinephrine auto-injector (EpiPen) if available.',
+                    'Help them sit upright to breathe easier.',
+                    'Call 911 immediately.',
+                    'Stay with the person and monitor their condition.'
+                ],
+                'warnings': [
+                    'Do not wait to see if symptoms get worse before calling for help.',
+                    'Do not give oral meds unless instructed.'
+                ],
+                'call_911': 'Call 911 if signs of anaphylaxis are present.'
             },
             'poisoning': {
-                'steps': ['Call poison control center', 'Do not induce vomiting', 'Keep sample of substance'],
-                'warnings': ['Do not give anything to eat or drink unless instructed'],
-                'call_911': 'Call 911 if person is unconscious or having trouble breathing'
+                'steps': [
+                    'Try to identify the poison (label, container, etc.).',
+                    'Call Poison Control at 1-800-222-1222 or local emergency services.',
+                    'Do not induce vomiting unless told to.',
+                    'Monitor for breathing or consciousness changes.',
+                    'Keep the substance container for emergency responders.'
+                ],
+                'warnings': [
+                    'Do not give food or drink unless instructed.',
+                    'Do not attempt home remedies.'
+                ],
+                'call_911': 'Call 911 if person is unconscious, having seizures, or trouble breathing.'
             }
         }
+
 
     def predict(self, text):
         seq = self.tokenizer.texts_to_sequences([text])
@@ -83,7 +168,7 @@ class EmergencyClassifier:
 
     def get_remedy(self, user_input):
         label, conf = self.predict(user_input)
-        if conf > 0.35:
+        if conf > 0.6:
             remedy = self.remedies.get(label, {})
             return {
                 'emergency_type': label,
